@@ -37,6 +37,8 @@ kubectl apply -f deployment-api-server.yaml
 ```
 ### 5. Test
 ```shell
-curl -X GET "http://localhost/api/hello?name=test"
-# hello api client, this is api server, port: 8090 
+curl -X GET "http://localhost/api/hello/v1"
+# hello api client, this is api server, ip: 10.1.0.33, port: 8090
+curl -X GET "http://localhost/api/hello/v2"
+# hello api client v2, this is api server, ip: 10.1.0.34, port: 8090
 ```

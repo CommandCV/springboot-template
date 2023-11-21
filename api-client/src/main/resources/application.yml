@@ -4,3 +4,14 @@ server:
 spring:
   application:
     name: api-client
+  cloud:
+    loadbalancer:
+      enabled: true
+      cache:
+        enabled: false
+
+feign:
+  circuitbreaker:
+    enabled: false
+  oauth2:
+    load-balanced: false

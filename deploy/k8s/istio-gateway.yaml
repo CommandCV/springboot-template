@@ -25,11 +25,17 @@ spec:
   gateways:
     - istio-test-gateway
   http:
-    - match:
+    - name: "api-client"
+      match:
         - uri:
             prefix: /api
       route:
         - destination:
             host: api-client.istio-test.svc.cluster.local
-            port:
-              number: 8080
+    - name: "api-server"
+      match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: api-server.istio-test.svc.cluster.local
