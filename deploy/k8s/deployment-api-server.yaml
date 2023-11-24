@@ -30,6 +30,10 @@ spec:
     metadata:
       labels:
         app: api-server
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8090"
+        prometheus.io/path: "/actuator/prometheus"
     spec:
       containers:
         - name: api-server

@@ -15,3 +15,14 @@ feign:
     enabled: false
   oauth2:
     load-balanced: false
+
+management:
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+        exclude: info,env,metrics,httptrace,threaddump,heapdump
+

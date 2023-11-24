@@ -4,3 +4,13 @@ server:
 spring:
   application:
     name: api-server
+
+management:
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+        exclude: info,env,metrics,httptrace,threaddump,heapdump
